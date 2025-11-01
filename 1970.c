@@ -33,18 +33,19 @@ int main() {
     int cartridge2 = max_recording[1];
     int cartridge3 = max_recording[2];
 
-    // // ordena músicas em ordem decrescente (bubble sort)
-    // for (i = 0; i < n - 1; i++)
-    // {
-    //     for (j = i + 1; j < n; j++)
-    //     {
-    //         if (music_duration[i] < music_duration[j]) {
-    //             int temp = music_duration[i];
-    //             music_duration[i] = music_duration[j];
-    //             music_duration[j] = temp;
-    //         }
-    //     }
-    // }
+    // ordena músicas em ordem decrescente (bubble sort)
+    for (i = 0; i < n - 1; i++)
+    {
+        for (j = i + 1; j < n; j++)
+        {
+            if (music_duration[i] < music_duration[j])
+            {
+                int temp = music_duration[i];
+                music_duration[i] = music_duration[j];
+                music_duration[j] = temp;
+            }
+        }
+    }
 
     // DP: dp[cap1][cap2][cap3] = máximo de minutos gravados
     int dp[MAX_DURATION][MAX_DURATION][MAX_DURATION];
